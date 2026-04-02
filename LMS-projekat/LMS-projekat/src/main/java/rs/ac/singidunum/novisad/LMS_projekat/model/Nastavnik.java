@@ -20,11 +20,14 @@ public class Nastavnik {
 	@Column
 	private String biografija;
 	
-	 @OneToMany(mappedBy = "nastavnik")
-	 private List<Dodela> dodele = new ArrayList<Dodela>();
+	@OneToMany(mappedBy = "nastavnik")
+	private List<Dodela> dodele = new ArrayList<Dodela>();
 	 
-	 @OneToMany(mappedBy = "nastavnik")
-	 private List<Zvanje> zvanja = new ArrayList<Zvanje>();
+	@OneToMany(mappedBy = "nastavnik")
+	private List<Zvanje> zvanja = new ArrayList<Zvanje>();
+	
+	@OneToMany(mappedBy = "nastavnik")
+	private List<AdministrativnoAngazovanje> angazovanje= new ArrayList<AdministrativnoAngazovanje>();
 	 
 	 
 	public Nastavnik() {
