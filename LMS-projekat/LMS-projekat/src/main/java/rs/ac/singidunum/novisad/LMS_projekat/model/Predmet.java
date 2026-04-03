@@ -44,9 +44,18 @@ public class Predmet {
 	@ManyToOne(optional = false)
 	private SadrzajPredmeta sadrzajPredmeta;
 	
+<<<<<<< HEAD
 	@ManyToOne(optional = false)
 	private Ishod ishod;
 	
 	@ManyToOne(optional=false)
 	private ObrazovniCilj obrazovniCilj;
+=======
+	@ManyToOne(optional = false)
+	private Ishod ishod;
+	
+	@ManyToOne(optional = false)
+	private ObrazovniCilj obrazovniCilj;
+	
+>>>>>>> e94cb8a4c08b84c76a590709224b909930cf54ec
 }
