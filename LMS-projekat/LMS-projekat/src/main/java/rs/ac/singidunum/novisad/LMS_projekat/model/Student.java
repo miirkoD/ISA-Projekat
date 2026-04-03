@@ -20,32 +20,8 @@ public class Student {
 	@OneToMany(mappedBy = "student")
     private List<Dodela> dodele = new ArrayList<Dodela>();
 	
-	public Student() {
-		super();
-	}
-	
-	public Student(Long id) {
-		super();
-		this.id = id;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public List<Dodela> getDodele() {
-		return dodele;
-	}
-
-	public void setDodele(List<Dodela> dodele) {
-		this.dodele = dodele;
-	}
-
-
+	@OneToMany(mappedBy = "student")
+	private List<StudentNaStudijskomProgramu> studentiNaStudijskimProgramima = new ArrayList<StudentNaStudijskomProgramu>();
 	
 	
 }
