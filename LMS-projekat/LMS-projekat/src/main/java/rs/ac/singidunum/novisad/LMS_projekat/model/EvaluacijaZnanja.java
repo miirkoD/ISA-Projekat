@@ -28,20 +28,14 @@ public class EvaluacijaZnanja {
 	@Column(nullable = false)
 	private int bodovi;
 	
-<<<<<<< HEAD
-=======
 	@ManyToOne(optional = false)
 	private Pohadjanje pohadjanje;
 	
 	@ManyToOne(optional = false)
 	private TipEvaluacijeZnanja tipEvaluacijeZnanja;
 	
->>>>>>> e94cb8a4c08b84c76a590709224b909930cf54ec
 	@OneToMany(mappedBy = "evaluacijaZnanja")
 	private List<Polaganje> polaganja = new ArrayList<Polaganje>();
-	
-	@ManyToOne(optional = false)
-	private TipEvaluacijeZnanja tipEvaluacijeZnanja;
 	
 	@ManyToOne(optional = false)
 	private InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja;
