@@ -30,6 +30,9 @@ public class EvaluacijaZnanja {
 	@ManyToOne(optional = false)
 	private Pohadjanje pohadjanje;
 	
+	@ManyToOne(optional = false)
+	private TipEvaluacijeZnanja tipEvaluacijeZnanja;
+	
 	@OneToMany(mappedBy = "evaluacijaZnanja")
 	private List<Polaganje> polaganja = new ArrayList<Polaganje>();
 	
