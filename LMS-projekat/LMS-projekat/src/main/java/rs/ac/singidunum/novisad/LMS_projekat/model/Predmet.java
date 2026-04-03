@@ -47,4 +47,7 @@ public class Predmet {
 	@ManyToOne(optional = false)
 	private Ishod ishod;
 	
+	@ManyToOne(optional = false)
+	private ObrazovniCilj obrazovniCilj;
+	
 }
