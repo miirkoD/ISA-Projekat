@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -18,6 +19,7 @@ public class Polaganje {
 	private int bodovi;
 	
 	@Column(nullable = false)
+	@Lob
 	private String napomena;
 	
 	@ManyToOne(optional = false)

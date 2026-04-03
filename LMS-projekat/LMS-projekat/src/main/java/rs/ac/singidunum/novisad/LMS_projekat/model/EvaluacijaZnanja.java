@@ -1,6 +1,7 @@
 package rs.ac.singidunum.novisad.LMS_projekat.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,18 +20,21 @@ public class EvaluacijaZnanja {
 	private Long id;
 	
 	@Column(nullable = false)
-	private Date pocetak;
+	private LocalDateTime pocetak;
 	
-	@Column(nullable = false)
-	private Date kraj;
+	@Column(nullable = true)
+	private LocalDateTime kraj;
 	
 	@Column(nullable = false)
 	private int bodovi;
 	
-	@ManyToOne(optional = false)
-	private Pohadjanje pohadjanje;
-	
 	@OneToMany(mappedBy = "evaluacijaZnanja")
 	private List<Polaganje> polaganja = new ArrayList<Polaganje>();
+	
+	@ManyToOne(optional = false)
+	private TipEvaluacijeZnanja tipEvaluacijeZnanja;
+	
+	@ManyToOne(optional = false)
+	private InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja;
 	
 }

@@ -1,6 +1,7 @@
 package rs.ac.singidunum.novisad.LMS_projekat.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,10 @@ public class TerminNastave {
 	private Long id;
 	
 	@Column(nullable = false)
-	private Date pocetak;
+	private LocalDateTime pocetak;
 	
-	@Column(nullable = false)
-	private Date kraj;
+	@Column(nullable = true)
+	private LocalDateTime kraj;
 	
 	@ManyToOne(optional = false)
 	private TipNastave tipNastave;

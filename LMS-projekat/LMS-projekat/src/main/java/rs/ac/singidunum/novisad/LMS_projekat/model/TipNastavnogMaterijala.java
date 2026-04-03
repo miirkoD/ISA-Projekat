@@ -23,6 +23,4 @@ public class TipNastavnogMaterijala {
 	@OneToMany(mappedBy = "tipNastavnogMaterijala")
 	private List<NastavniMaterijal> nastavniMaterijali = new ArrayList<NastavniMaterijal>();
 	
-	@ManyToOne(optional = false)
-	private InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja;
 }

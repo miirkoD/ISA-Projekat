@@ -23,4 +23,6 @@ public class InstrumentEvaluacijeZnanja {
 	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<NastavniMaterijal> nastavniMaterijali = new ArrayList<NastavniMaterijal>();
 	
+	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja", orphanRemoval = true, cascade = CascadeType.ALL)
+	private List<EvaluacijaZnanja> evaluacijaZnanja=new ArrayList<EvaluacijaZnanja>();
 }

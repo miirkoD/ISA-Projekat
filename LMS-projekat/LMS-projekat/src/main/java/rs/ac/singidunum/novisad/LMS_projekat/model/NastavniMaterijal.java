@@ -29,8 +29,10 @@ public class NastavniMaterijal {
 	@ManyToOne(optional = false)
 	private TipNastavnogMaterijala tipNastavnogMaterijala;
 	
-	@OneToMany(mappedBy = "nastavniMaterijal", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "nastavniMaterijal", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Datoteka> datoteke = new ArrayList<Datoteka>();
 	
+	@ManyToOne(optional = true)
+	private InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja;
 	
 }

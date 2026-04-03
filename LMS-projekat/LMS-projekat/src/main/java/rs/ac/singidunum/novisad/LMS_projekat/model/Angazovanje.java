@@ -1,6 +1,7 @@
 package rs.ac.singidunum.novisad.LMS_projekat.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,11 +17,11 @@ public class Angazovanje {
 	private Long id;
 	
 	@Column(nullable = false)
-	private Date pocetak;
+	private LocalDateTime pocetak;
 	
 
-	@Column(nullable = false)
-	private Date kraj;
+	@Column(nullable = true)
+	private LocalDateTime kraj;
 	
 	@ManyToOne(optional = false)
 	private TipAngazovanja tipAngazovanja;
