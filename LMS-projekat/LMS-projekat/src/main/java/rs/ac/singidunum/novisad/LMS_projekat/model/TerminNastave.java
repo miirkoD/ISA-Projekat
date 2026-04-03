@@ -30,4 +30,7 @@ public class TerminNastave {
 	
 	@OneToMany(mappedBy = "terminNastave", cascade = CascadeType.ALL, orphanRemoval = true )
 	private List<Angazovanje> angazovanja = new ArrayList<Angazovanje>();
+	
+	@ManyToOne(optional = true)
+	private NastavniMaterijal nastavniMaterijal;
 }

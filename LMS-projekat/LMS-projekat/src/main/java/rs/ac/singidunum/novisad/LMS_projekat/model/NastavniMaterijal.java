@@ -32,5 +32,6 @@ public class NastavniMaterijal {
 	@OneToMany(mappedBy = "nastavniMaterijal", cascade = CascadeType.ALL)
 	private List<Datoteka> datoteke = new ArrayList<Datoteka>();
 	
-	
+	@OneToMany(mappedBy = "nastavniMaterijal")
+	private List<TerminNastave> predmeti = new ArrayList<TerminNastave>();
 }
