@@ -23,11 +23,14 @@ public class Nastavnik {
 	@Lob
 	private String biografija;
 	
-	 @OneToMany(mappedBy = "nastavnik")
-	 private List<Dodela> dodele = new ArrayList<Dodela>();
+	@OneToMany(mappedBy = "nastavnik")
+	private List<Dodela> dodele = new ArrayList<Dodela>();
 	 
-	 @OneToMany(mappedBy = "nastavnik")
-	 private List<Zvanje> zvanja = new ArrayList<Zvanje>();
+	@OneToMany(mappedBy = "nastavnik")
+	private List<Zvanje> zvanja = new ArrayList<Zvanje>();
+	
+	@OneToMany(mappedBy = "nastavnik")
+	private List<AdministrativnoAngazovanje> angazovanje= new ArrayList<AdministrativnoAngazovanje>();
 	 
 	 
 	@OneToMany(mappedBy = "nastavnik", cascade = CascadeType.ALL, orphanRemoval = true)
