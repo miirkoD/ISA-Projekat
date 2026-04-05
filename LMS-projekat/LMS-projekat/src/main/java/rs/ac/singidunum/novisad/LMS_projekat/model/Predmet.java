@@ -1,6 +1,6 @@
 package rs.ac.singidunum.novisad.LMS_projekat.model;
 
-import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,8 +38,8 @@ public class Predmet {
 	@Column(nullable = false)
 	private int brojOstalihCasova;
 	
-	@Column(nullable = false)
-	private int godinaStudija;
+	@ManyToOne(optional = false)
+	private GodinaStudija godinaStudija;
 	
 	@ManyToOne(optional = false)
 	private SadrzajPredmeta sadrzajPredmeta;
@@ -49,5 +49,8 @@ public class Predmet {
 	
 	@ManyToOne(optional=false)
 	private ObrazovniCilj obrazovniCilj;
+	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
 	
 }

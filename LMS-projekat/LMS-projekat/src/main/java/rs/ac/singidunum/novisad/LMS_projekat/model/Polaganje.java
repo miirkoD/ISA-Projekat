@@ -27,4 +27,7 @@ public class Polaganje {
 	
 	@ManyToOne(optional = false)
 	private EvaluacijaZnanja evaluacijaZnanja;
+	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
 }

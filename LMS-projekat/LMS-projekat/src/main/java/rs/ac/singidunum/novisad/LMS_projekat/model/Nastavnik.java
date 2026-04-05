@@ -31,8 +31,7 @@ public class Nastavnik {
 	
 	@OneToMany(mappedBy = "nastavnik")
 	private List<AdministrativnoAngazovanje> angazovanje= new ArrayList<AdministrativnoAngazovanje>();
-	 
-	 
+	  
 	@OneToMany(mappedBy = "nastavnik", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Angazovanje> angazovanja = new ArrayList<Angazovanje>();
    

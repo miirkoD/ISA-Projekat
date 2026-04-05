@@ -25,6 +25,10 @@ public class GodinaStudija {
 	
 	@OneToMany(mappedBy = "godinaStudija")
 	private List<SkolskaGodina> skolskaGodina = new ArrayList<SkolskaGodina>();
+	
+	@OneToMany(mappedBy = "godinaStudija")
+	private List<Predmet>predmeti=new ArrayList<Predmet>();
+
 
 	public GodinaStudija() {
 		super();

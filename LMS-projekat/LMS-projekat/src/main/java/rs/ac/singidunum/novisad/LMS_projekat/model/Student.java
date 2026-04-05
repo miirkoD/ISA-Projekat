@@ -23,5 +23,7 @@ public class Student {
 	@OneToMany(mappedBy = "student")
 	private List<StudentNaStudijskomProgramu> studentiNaStudijskimProgramima = new ArrayList<StudentNaStudijskomProgramu>();
 	
+	@ManyToOne(optional = false)
+	private Adresa adresa;
 	
 }

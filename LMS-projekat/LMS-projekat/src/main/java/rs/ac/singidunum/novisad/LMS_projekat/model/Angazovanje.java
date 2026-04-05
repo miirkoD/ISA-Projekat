@@ -31,4 +31,7 @@ public class Angazovanje {
 	
 	@ManyToOne(optional = false)
 	private TerminNastave terminNastave;
+	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
 }

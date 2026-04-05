@@ -29,4 +29,7 @@ public class StudentNaStudijskomProgramu {
 	
 	@OneToMany(mappedBy = "studentiNaStudijskimProgramima", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Polaganje> polaganja = new ArrayList<Polaganje>();
+	
+	@OneToMany(mappedBy = "studentNaStudijskomProgramu")
+	private List<Upis>upisi=new ArrayList<Upis>();
 }

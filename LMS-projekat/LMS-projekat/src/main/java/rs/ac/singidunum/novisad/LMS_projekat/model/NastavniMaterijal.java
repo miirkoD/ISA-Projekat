@@ -37,5 +37,8 @@ public class NastavniMaterijal {
 	
 	@OneToMany(mappedBy = "nastavniMaterijal")
 	private List<TerminNastave> terminiNastave = new ArrayList<TerminNastave>();
+	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
 
 }

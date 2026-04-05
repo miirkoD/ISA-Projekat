@@ -40,4 +40,7 @@ public class EvaluacijaZnanja {
 	@ManyToOne(optional = false)
 	private InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja;
 	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
+	
 }

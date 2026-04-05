@@ -34,4 +34,7 @@ public class TerminNastave {
 	
 	@ManyToOne(optional = true)
 	private NastavniMaterijal nastavniMaterijal;
+	
+	@ManyToOne(optional=false)
+	private RealizacijaPredmeta realizacijaPredmeta;
 }
