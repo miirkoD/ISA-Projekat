@@ -20,9 +20,62 @@ public class InstrumentEvaluacijeZnanja {
 	@Column(nullable = false)
 	private String naziv;
 	
-	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja")
 	private List<NastavniMaterijal> nastavniMaterijali = new ArrayList<NastavniMaterijal>();
 	
-	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "instrumentEvaluacijeZnanja")
 	private List<EvaluacijaZnanja> evaluacijaZnanja=new ArrayList<EvaluacijaZnanja>();
+
+	public InstrumentEvaluacijeZnanja() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public InstrumentEvaluacijeZnanja(Long id, String naziv, List<NastavniMaterijal> nastavniMaterijali,
+			List<EvaluacijaZnanja> evaluacijaZnanja) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.nastavniMaterijali = nastavniMaterijali;
+		this.evaluacijaZnanja = evaluacijaZnanja;
+	}
+
+	public InstrumentEvaluacijeZnanja(Long id, String naziv) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public List<NastavniMaterijal> getNastavniMaterijali() {
+		return nastavniMaterijali;
+	}
+
+	public void setNastavniMaterijali(List<NastavniMaterijal> nastavniMaterijali) {
+		this.nastavniMaterijali = nastavniMaterijali;
+	}
+
+	public List<EvaluacijaZnanja> getEvaluacijaZnanja() {
+		return evaluacijaZnanja;
+	}
+
+	public void setEvaluacijaZnanja(List<EvaluacijaZnanja> evaluacijaZnanja) {
+		this.evaluacijaZnanja = evaluacijaZnanja;
+	}
+
 }

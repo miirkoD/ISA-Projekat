@@ -22,5 +22,48 @@ public class TipNastavnogMaterijala {
 	
 	@OneToMany(mappedBy = "tipNastavnogMaterijala")
 	private List<NastavniMaterijal> nastavniMaterijali = new ArrayList<NastavniMaterijal>();
+
+	public TipNastavnogMaterijala() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TipNastavnogMaterijala(Long id, String naziv, List<NastavniMaterijal> nastavniMaterijali) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.nastavniMaterijali = nastavniMaterijali;
+	}
+
+	public TipNastavnogMaterijala(Long id, String naziv) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public List<NastavniMaterijal> getNastavniMaterijali() {
+		return nastavniMaterijali;
+	}
+
+	public void setNastavniMaterijali(List<NastavniMaterijal> nastavniMaterijali) {
+		this.nastavniMaterijali = nastavniMaterijali;
+	}
+	
 	
 }

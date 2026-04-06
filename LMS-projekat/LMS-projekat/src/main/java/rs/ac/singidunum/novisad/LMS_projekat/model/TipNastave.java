@@ -21,4 +21,47 @@ public class TipNastave {
 	
 	@OneToMany(mappedBy = "tipNastave")
 	private List<TerminNastave> terminiNastave = new ArrayList<TerminNastave>();
+
+	public TipNastave() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TipNastave(Long id, String naziv, List<TerminNastave> terminiNastave) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.terminiNastave = terminiNastave;
+	}
+
+	public TipNastave(Long id, String naziv) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public List<TerminNastave> getTerminiNastave() {
+		return terminiNastave;
+	}
+
+	public void setTerminiNastave(List<TerminNastave> terminiNastave) {
+		this.terminiNastave = terminiNastave;
+	}
+
 }

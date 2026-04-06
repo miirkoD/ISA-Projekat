@@ -26,9 +26,68 @@ public class StudijskiProgram {
 	@OneToMany(mappedBy = "studijskiProgram")
 	private List<GodinaStudija> godineStudija=new ArrayList<GodinaStudija>();
 	
+	@OneToMany(mappedBy = "studijskiProgram")
+	private List<AdministrativnoAngazovanje> administrativnoAngazovanje=new ArrayList<AdministrativnoAngazovanje>();
+	
 	public StudijskiProgram() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	public StudijskiProgram(Long id, String naziv, Fakultet fakultet, List<GodinaStudija> godineStudija,
+			List<AdministrativnoAngazovanje> administrativnoAngazovanje) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.fakultet = fakultet;
+		this.godineStudija = godineStudija;
+		this.administrativnoAngazovanje = administrativnoAngazovanje;
+	}
+
+	public StudijskiProgram(Long id, String naziv, Fakultet fakultet) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.fakultet = fakultet;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public Fakultet getFakultet() {
+		return fakultet;
+	}
+
+	public void setFakultet(Fakultet fakultet) {
+		this.fakultet = fakultet;
+	}
+
+	public List<GodinaStudija> getGodineStudija() {
+		return godineStudija;
+	}
+
+	public void setGodineStudija(List<GodinaStudija> godineStudija) {
+		this.godineStudija = godineStudija;
+	}
+
+	public List<AdministrativnoAngazovanje> getAdministrativnoAngazovanje() {
+		return administrativnoAngazovanje;
+	}
+
+	public void setAdministrativnoAngazovanje(List<AdministrativnoAngazovanje> administrativnoAngazovanje) {
+		this.administrativnoAngazovanje = administrativnoAngazovanje;
 	}
 	
 }

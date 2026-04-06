@@ -21,14 +21,14 @@ public class SkolskaGodina {
 	@Column(nullable=false)
 	private LocalDate pocetak;
 	
-	@Column(nullable = false)
+	@Column()
 	private LocalDate kraj;
 	
 	@ManyToOne(optional=false)
 	private GodinaStudija godinaStudija;
 	
-	@ManyToOne(optional=false)
-	private RealizacijaPredmeta realizacijaPredmeta;
+	@OneToMany(mappedBy = "skolskaGodina")
+	private List<RealizacijaPredmeta> realizacijaPredmeta=new ArrayList<RealizacijaPredmeta>();
 	
 	@OneToMany(mappedBy = "skolskaGodina")
 	private List<Upis>upisi=new ArrayList<Upis>();
@@ -36,4 +36,72 @@ public class SkolskaGodina {
 	public SkolskaGodina() {
 		super();
 	}
+
+	public SkolskaGodina(Long id, LocalDate pocetak, LocalDate kraj, GodinaStudija godinaStudija,
+			List<RealizacijaPredmeta> realizacijaPredmeta, List<Upis> upisi) {
+		super();
+		this.id = id;
+		this.pocetak = pocetak;
+		this.kraj = kraj;
+		this.godinaStudija = godinaStudija;
+		this.realizacijaPredmeta = realizacijaPredmeta;
+		this.upisi = upisi;
+	}
+
+	public SkolskaGodina(Long id, LocalDate pocetak, LocalDate kraj, GodinaStudija godinaStudija) {
+		super();
+		this.id = id;
+		this.pocetak = pocetak;
+		this.kraj = kraj;
+		this.godinaStudija = godinaStudija;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDate getPocetak() {
+		return pocetak;
+	}
+
+	public void setPocetak(LocalDate pocetak) {
+		this.pocetak = pocetak;
+	}
+
+	public LocalDate getKraj() {
+		return kraj;
+	}
+
+	public void setKraj(LocalDate kraj) {
+		this.kraj = kraj;
+	}
+
+	public GodinaStudija getGodinaStudija() {
+		return godinaStudija;
+	}
+
+	public void setGodinaStudija(GodinaStudija godinaStudija) {
+		this.godinaStudija = godinaStudija;
+	}
+
+	public List<RealizacijaPredmeta> getRealizacijaPredmeta() {
+		return realizacijaPredmeta;
+	}
+
+	public void setRealizacijaPredmeta(List<RealizacijaPredmeta> realizacijaPredmeta) {
+		this.realizacijaPredmeta = realizacijaPredmeta;
+	}
+
+	public List<Upis> getUpisi() {
+		return upisi;
+	}
+
+	public void setUpisi(List<Upis> upisi) {
+		this.upisi = upisi;
+	}
+	
 }

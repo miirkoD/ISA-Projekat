@@ -23,4 +23,47 @@ public class TipEvaluacijeZnanja {
 	
 	@OneToMany(mappedBy = "tipEvaluacijeZnanja")
 	private List<EvaluacijaZnanja> evaluacijeZnanja = new ArrayList<EvaluacijaZnanja>();
+
+	public TipEvaluacijeZnanja() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TipEvaluacijeZnanja(Long id, String naziv, List<EvaluacijaZnanja> evaluacijeZnanja) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+		this.evaluacijeZnanja = evaluacijeZnanja;
+	}
+
+	public TipEvaluacijeZnanja(Long id, String naziv) {
+		super();
+		this.id = id;
+		this.naziv = naziv;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public List<EvaluacijaZnanja> getEvaluacijeZnanja() {
+		return evaluacijeZnanja;
+	}
+
+	public void setEvaluacijeZnanja(List<EvaluacijaZnanja> evaluacijeZnanja) {
+		this.evaluacijeZnanja = evaluacijeZnanja;
+	}
+
 }

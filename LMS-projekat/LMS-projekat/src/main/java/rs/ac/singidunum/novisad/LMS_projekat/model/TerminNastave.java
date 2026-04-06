@@ -23,18 +23,103 @@ public class TerminNastave {
 	@Column(nullable = false)
 	private LocalDateTime pocetak;
 	
-	@Column(nullable = true)
+	@Column()
 	private LocalDateTime kraj;
 	
 	@ManyToOne(optional = false)
 	private TipNastave tipNastave;
 	
-	@OneToMany(mappedBy = "terminNastave", cascade = CascadeType.ALL, orphanRemoval = true )
-	private List<Angazovanje> angazovanja = new ArrayList<Angazovanje>();
-	
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	private NastavniMaterijal nastavniMaterijal;
 	
 	@ManyToOne(optional=false)
 	private RealizacijaPredmeta realizacijaPredmeta;
+	
+	@OneToMany(mappedBy = "terminNastave")
+	private List<Angazovanje> angazovanja = new ArrayList<Angazovanje>();
+
+	public TerminNastave() {
+		super();
+	}
+
+	public TerminNastave(Long id, LocalDateTime pocetak, LocalDateTime kraj, TipNastave tipNastave,
+			NastavniMaterijal nastavniMaterijal, RealizacijaPredmeta realizacijaPredmeta,
+			List<Angazovanje> angazovanja) {
+		super();
+		this.id = id;
+		this.pocetak = pocetak;
+		this.kraj = kraj;
+		this.tipNastave = tipNastave;
+		this.nastavniMaterijal = nastavniMaterijal;
+		this.realizacijaPredmeta = realizacijaPredmeta;
+		this.angazovanja = angazovanja;
+	}
+
+	public TerminNastave(Long id, LocalDateTime pocetak, LocalDateTime kraj, TipNastave tipNastave,
+			NastavniMaterijal nastavniMaterijal, RealizacijaPredmeta realizacijaPredmeta) {
+		super();
+		this.id = id;
+		this.pocetak = pocetak;
+		this.kraj = kraj;
+		this.tipNastave = tipNastave;
+		this.nastavniMaterijal = nastavniMaterijal;
+		this.realizacijaPredmeta = realizacijaPredmeta;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getPocetak() {
+		return pocetak;
+	}
+
+	public void setPocetak(LocalDateTime pocetak) {
+		this.pocetak = pocetak;
+	}
+
+	public LocalDateTime getKraj() {
+		return kraj;
+	}
+
+	public void setKraj(LocalDateTime kraj) {
+		this.kraj = kraj;
+	}
+
+	public TipNastave getTipNastave() {
+		return tipNastave;
+	}
+
+	public void setTipNastave(TipNastave tipNastave) {
+		this.tipNastave = tipNastave;
+	}
+
+	public NastavniMaterijal getNastavniMaterijal() {
+		return nastavniMaterijal;
+	}
+
+	public void setNastavniMaterijal(NastavniMaterijal nastavniMaterijal) {
+		this.nastavniMaterijal = nastavniMaterijal;
+	}
+
+	public RealizacijaPredmeta getRealizacijaPredmeta() {
+		return realizacijaPredmeta;
+	}
+
+	public void setRealizacijaPredmeta(RealizacijaPredmeta realizacijaPredmeta) {
+		this.realizacijaPredmeta = realizacijaPredmeta;
+	}
+
+	public List<Angazovanje> getAngazovanja() {
+		return angazovanja;
+	}
+
+	public void setAngazovanja(List<Angazovanje> angazovanja) {
+		this.angazovanja = angazovanja;
+	}
+	
 }

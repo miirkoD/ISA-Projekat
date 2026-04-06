@@ -30,9 +30,79 @@ public class Nastavnik {
 	private List<Zvanje> zvanja = new ArrayList<Zvanje>();
 	
 	@OneToMany(mappedBy = "nastavnik")
-	private List<AdministrativnoAngazovanje> angazovanje= new ArrayList<AdministrativnoAngazovanje>();
+	private List<AdministrativnoAngazovanje> administrativnoAngazovanje= new ArrayList<AdministrativnoAngazovanje>();
 	  
-	@OneToMany(mappedBy = "nastavnik", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "nastavnik")
 	private List<Angazovanje> angazovanja = new ArrayList<Angazovanje>();
+
+	public Nastavnik() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Nastavnik(Long id, String biografija, List<Dodela> dodele, List<Zvanje> zvanja,
+			List<AdministrativnoAngazovanje> administrativnoAngazovanje, List<Angazovanje> angazovanja) {
+		super();
+		this.id = id;
+		this.biografija = biografija;
+		this.dodele = dodele;
+		this.zvanja = zvanja;
+		this.administrativnoAngazovanje = administrativnoAngazovanje;
+		this.angazovanja = angazovanja;
+	}
+
+	public Nastavnik(Long id, String biografija) {
+		super();
+		this.id = id;
+		this.biografija = biografija;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getBiografija() {
+		return biografija;
+	}
+
+	public void setBiografija(String biografija) {
+		this.biografija = biografija;
+	}
+
+	public List<Dodela> getDodele() {
+		return dodele;
+	}
+
+	public void setDodele(List<Dodela> dodele) {
+		this.dodele = dodele;
+	}
+
+	public List<Zvanje> getZvanja() {
+		return zvanja;
+	}
+
+	public void setZvanja(List<Zvanje> zvanja) {
+		this.zvanja = zvanja;
+	}
+
+	public List<AdministrativnoAngazovanje> getAdministrativnoAngazovanje() {
+		return administrativnoAngazovanje;
+	}
+
+	public void setAdministrativnoAngazovanje(List<AdministrativnoAngazovanje> administrativnoAngazovanje) {
+		this.administrativnoAngazovanje = administrativnoAngazovanje;
+	}
+
+	public List<Angazovanje> getAngazovanja() {
+		return angazovanja;
+	}
+
+	public void setAngazovanja(List<Angazovanje> angazovanja) {
+		this.angazovanja = angazovanja;
+	}
    
 }

@@ -33,7 +33,7 @@ public class RegistrovanKorisnik {
 	@Column
 	private String lozinka;
 	
-    @OneToMany(mappedBy = "korisnik", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "korisnik")
     private List<Dodela> dodeljeneUloge = new ArrayList<Dodela>();
 
     @OneToMany(mappedBy = "dodelio")
@@ -56,6 +56,20 @@ public class RegistrovanKorisnik {
 		this.lozinka = lozinka;
 	}
 	
+
+	public RegistrovanKorisnik(Long id, String ime, String prezime, String jmbg, String korisnickoIme, String lozinka,
+			List<Dodela> dodeljeneUloge, List<Dodela> izvrseneDodale, List<PravoPristupa> prava) {
+		super();
+		this.id = id;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.jmbg = jmbg;
+		this.korisnickoIme = korisnickoIme;
+		this.lozinka = lozinka;
+		this.dodeljeneUloge = dodeljeneUloge;
+		this.izvrseneDodale = izvrseneDodale;
+		this.prava = prava;
+	}
 
 	public Long getId() {
 		return id;
