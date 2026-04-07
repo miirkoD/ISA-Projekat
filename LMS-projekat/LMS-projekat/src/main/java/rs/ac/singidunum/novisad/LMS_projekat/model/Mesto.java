@@ -24,7 +24,7 @@ public class Mesto {
 	@OneToMany(mappedBy = "mesto")
 	private List<Adresa> adrese = new ArrayList<Adresa>();
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Drzava drzava;
 
 	public Mesto() {

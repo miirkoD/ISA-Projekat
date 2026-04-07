@@ -22,13 +22,13 @@ public class Zvanje {
 	@Column
 	private LocalDateTime datumPrestanka;
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private Nastavnik nastavnik;
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private TipZvanja tipZvanja;
 	
-	@ManyToOne
+	@ManyToOne(optional=false)
 	private NaucnaOblast naucnaOblast;
 
 	public Zvanje() {

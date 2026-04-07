@@ -46,8 +46,4 @@ public class Administrator {
 		this.dodele = dodele;
 	}
 
-    
-    
-	
-	
 }

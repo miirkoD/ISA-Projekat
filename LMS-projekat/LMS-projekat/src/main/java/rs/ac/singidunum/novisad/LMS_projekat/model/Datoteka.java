@@ -9,6 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -22,6 +25,7 @@ public class Datoteka {
 	private String naziv;
 	
 	@Column
+	@Lob
 	private String opis;
 	
 	@Column
@@ -30,25 +34,31 @@ public class Datoteka {
 	@OneToMany(mappedBy = "datoteka")
 	private List<PravoPristupa> pravaPristupa = new ArrayList<PravoPristupa>();
 
+	@ManyToOne
+    private NastavniMaterijal nastavniMaterijal;
+
 	public Datoteka() {
 		super();
 	}
 
-	public Datoteka(Long id, String naziv, String opis, URL url, List<PravoPristupa> pravaPristupa) {
+	public Datoteka(Long id, String naziv, String opis, URL url, List<PravoPristupa> pravaPristupa,
+			NastavniMaterijal nastavniMaterijal) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
 		this.url = url;
 		this.pravaPristupa = pravaPristupa;
+		this.nastavniMaterijal = nastavniMaterijal;
 	}
 
-	public Datoteka(Long id, String naziv, String opis, URL url) {
+	public Datoteka(Long id, String naziv, String opis, URL url, NastavniMaterijal nastavniMaterijal) {
 		super();
 		this.id = id;
 		this.naziv = naziv;
 		this.opis = opis;
 		this.url = url;
+		this.nastavniMaterijal = nastavniMaterijal;
 	}
 
 	public Long getId() {
@@ -90,7 +100,13 @@ public class Datoteka {
 	public void setPravaPristupa(List<PravoPristupa> pravaPristupa) {
 		this.pravaPristupa = pravaPristupa;
 	}
-	
-	
+
+	public NastavniMaterijal getNastavniMaterijal() {
+		return nastavniMaterijal;
+	}
+
+	public void setNastavniMaterijal(NastavniMaterijal nastavniMaterijal) {
+		this.nastavniMaterijal = nastavniMaterijal;
+	}
 	
 }

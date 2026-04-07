@@ -20,13 +20,30 @@ public class Student {
 	@OneToMany(mappedBy = "student")
     private List<Dodela> dodele = new ArrayList<Dodela>();
 	
+	@OneToMany(mappedBy = "student")
+	private List<StudentNaStudijskomProgramu> studentiNaStudijskimProgramima = new ArrayList<StudentNaStudijskomProgramu>();
+	
+	@ManyToOne(optional = false)
+	private Adresa adresa;
+
 	public Student() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	public Student(Long id) {
+
+	public Student(Long id, List<Dodela> dodele, List<StudentNaStudijskomProgramu> studentiNaStudijskimProgramima,
+			Adresa adresa) {
 		super();
 		this.id = id;
+		this.dodele = dodele;
+		this.studentiNaStudijskimProgramima = studentiNaStudijskimProgramima;
+		this.adresa = adresa;
+	}
+
+	public Student(Long id, Adresa adresa) {
+		super();
+		this.id = id;
+		this.adresa = adresa;
 	}
 
 	public Long getId() {
@@ -45,7 +62,21 @@ public class Student {
 		this.dodele = dodele;
 	}
 
+	public List<StudentNaStudijskomProgramu> getStudentiNaStudijskimProgramima() {
+		return studentiNaStudijskimProgramima;
+	}
 
+	public void setStudentiNaStudijskimProgramima(List<StudentNaStudijskomProgramu> studentiNaStudijskimProgramima) {
+		this.studentiNaStudijskimProgramima = studentiNaStudijskimProgramima;
+	}
+
+	public Adresa getAdresa() {
+		return adresa;
+	}
+
+	public void setAdresa(Adresa adresa) {
+		this.adresa = adresa;
+	}
 	
 	
 }
