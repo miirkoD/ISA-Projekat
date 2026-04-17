@@ -29,9 +29,6 @@ public class EvaluacijaZnanja {
 	private Integer bodovi;
 	
 	@ManyToOne(optional = false)
-	private Pohadjanje pohadjanje;
-	
-	@ManyToOne(optional = false)
 	private TipEvaluacijeZnanja tipEvaluacijeZnanja;
 	
 	@OneToMany(mappedBy = "evaluacijaZnanja")
@@ -47,7 +44,7 @@ public class EvaluacijaZnanja {
 		super();
 	}
 
-	public EvaluacijaZnanja(Long id, LocalDateTime pocetak, LocalDateTime kraj, Integer bodovi, Pohadjanje pohadjanje,
+	public EvaluacijaZnanja(Long id, LocalDateTime pocetak, LocalDateTime kraj, Integer bodovi,
 			TipEvaluacijeZnanja tipEvaluacijeZnanja, List<Polaganje> polaganja,
 			InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja, RealizacijaPredmeta realizacijaPredmeta) {
 		super();
@@ -55,14 +52,13 @@ public class EvaluacijaZnanja {
 		this.pocetak = pocetak;
 		this.kraj = kraj;
 		this.bodovi = bodovi;
-		this.pohadjanje = pohadjanje;
 		this.tipEvaluacijeZnanja = tipEvaluacijeZnanja;
 		this.polaganja = polaganja;
 		this.instrumentEvaluacijeZnanja = instrumentEvaluacijeZnanja;
 		this.realizacijaPredmeta = realizacijaPredmeta;
 	}
 
-	public EvaluacijaZnanja(Long id, LocalDateTime pocetak, LocalDateTime kraj, Integer bodovi, Pohadjanje pohadjanje,
+	public EvaluacijaZnanja(Long id, LocalDateTime pocetak, LocalDateTime kraj, Integer bodovi,
 			TipEvaluacijeZnanja tipEvaluacijeZnanja, InstrumentEvaluacijeZnanja instrumentEvaluacijeZnanja,
 			RealizacijaPredmeta realizacijaPredmeta) {
 		super();
@@ -70,7 +66,6 @@ public class EvaluacijaZnanja {
 		this.pocetak = pocetak;
 		this.kraj = kraj;
 		this.bodovi = bodovi;
-		this.pohadjanje = pohadjanje;
 		this.tipEvaluacijeZnanja = tipEvaluacijeZnanja;
 		this.instrumentEvaluacijeZnanja = instrumentEvaluacijeZnanja;
 		this.realizacijaPredmeta = realizacijaPredmeta;
@@ -106,14 +101,6 @@ public class EvaluacijaZnanja {
 
 	public void setBodovi(Integer bodovi) {
 		this.bodovi = bodovi;
-	}
-
-	public Pohadjanje getPohadjanje() {
-		return pohadjanje;
-	}
-
-	public void setPohadjanje(Pohadjanje pohadjanje) {
-		this.pohadjanje = pohadjanje;
 	}
 
 	public TipEvaluacijeZnanja getTipEvaluacijeZnanja() {
