@@ -3,6 +3,7 @@ package rs.ac.singidunum.novisad.LMS_projekat.controller;
 import rs.ac.singidunum.novisad.LMS_projekat.dto.DatotekaDTO;
 import rs.ac.singidunum.novisad.LMS_projekat.model.Datoteka;
 import rs.ac.singidunum.novisad.LMS_projekat.service.DatotekaService;
+import rs.ac.singidunum.novisad.LMS_projekat.service.NastavniMaterijalService;
 import rs.ac.singidunum.novisad.LMS_projekat.dto.NastavniMaterijalDTO;
 import rs.ac.singidunum.novisad.LMS_projekat.model.NastavniMaterijal;
 import rs.ac.singidunum.novisad.LMS_projekat.dto.PravoPristupaDTO;
@@ -22,15 +23,33 @@ public class DatotekaController {
     @Autowired
     private DatotekaService datotekaService;
 
-    //@Autowired
-    //private NastavniMaterijalService nastavniMaterijalService;
+    @Autowired
+    private NastavniMaterijalService nastavniMaterijalService;
 
     private DatotekaDTO buildDTO(Datoteka e) {
-       
+        NastavniMaterijalDTO nastavniMaterijalDTO = new NastavniMaterijalDTO(
+            e.getNastavniMaterijal().getId(),
+            e.getNastavniMaterijal().getNaziv(),
+            e.getNastavniMaterijal().getOpis()
+        );
+        List<PravoPristupaDTO> pravaPristupaDTOList = new ArrayList<>();
+        for (PravoPristupa item : e.getPravaPristupa()) {
+            pravaPristupaDTOList.add(new PravoPristupaDTO(
+                item.getId(),
+                item.getDatumKreiranja(),
+                item.getDatumBrisanja()
+            ));
+        }
         return new DatotekaDTO(
-          
+            e.getId(),
+            e.getNaziv(),
+            e.getOpis(),
+            e.getUrl(),
+            nastavniMaterijalDTO,
+            pravaPristupaDTOList
         );
     }
+
 
     @RequestMapping(path = "", method =RequestMethod.GET)
     public ArrayList<DatotekaDTO> findAll() {
